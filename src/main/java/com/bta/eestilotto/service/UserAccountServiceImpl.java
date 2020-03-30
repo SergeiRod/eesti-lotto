@@ -1,15 +1,21 @@
 package com.bta.eestilotto.service;
 
+import com.bta.eestilotto.dao.LotteryTicketRepository;
 import com.bta.eestilotto.dao.UserAccountRepository;
+import com.bta.eestilotto.domain.LotteryTicket;
 import com.bta.eestilotto.domain.UserAccount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
-public class UserAccountImpl implements UserAccountService {
+public class UserAccountServiceImpl implements UserAccountService {
+
+    @Autowired
+    private LotteryTicketRepository lotteryTicketRepository;
+
     @Autowired
     private UserAccountRepository userAccountRepository;
 
@@ -24,5 +30,10 @@ public class UserAccountImpl implements UserAccountService {
         }
 
         return false;
+    }
+
+    @Override
+    public void registerTicket(LotteryTicket ticket) {
+
     }
 }

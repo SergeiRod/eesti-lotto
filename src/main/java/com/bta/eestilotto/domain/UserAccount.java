@@ -1,7 +1,7 @@
 package com.bta.eestilotto.domain;
 
-public class UserAccount {
-    private Long id;
+public class UserAccount extends BaseEntity {
+
     private String firstName;
     private String lastName;
     private String userName;
@@ -10,7 +10,7 @@ public class UserAccount {
     private String email;
 
     public UserAccount(Long id, String firstName, String lastName, String userName, String userPassword, Long isikuKood, String email) {
-        this.id = id;
+        super(id);
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
@@ -25,14 +25,6 @@ public class UserAccount {
 
     public void setUserPassword(String userPassword) {
         this.userPassword = userPassword;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getFirstName() {

@@ -3,13 +3,11 @@ package com.bta.eestilotto.dao;
 import com.bta.eestilotto.domain.UserAccount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public class UserAccountRepository implements BaseRepository<UserAccount> {
@@ -42,7 +40,6 @@ public class UserAccountRepository implements BaseRepository<UserAccount> {
         MapSqlParameterSource map = new MapSqlParameterSource();
         map.addValue("userName", userName);
 
-
         return namedParameterJdbcTemplate.query(sql, map, (resultSet, i) ->
         new UserAccount(resultSet.getLong("id"),
                 resultSet.getString("userName"),
@@ -52,6 +49,15 @@ public class UserAccountRepository implements BaseRepository<UserAccount> {
                 resultSet.getLong("isikuKood"),
                 resultSet.getString("email")
         ));
+    }
 
+    @Override
+    public int delete(UserAccount entity) {
+        return 0;
+    }
+
+    @Override
+    public List<UserAccount> findAll() {
+        return null;
     }
 }

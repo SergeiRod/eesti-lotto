@@ -1,8 +1,10 @@
 package com.bta.eestilotto.service;
 
+import com.bta.eestilotto.domain.VikingLottoResult;
+
 import java.util.Set;
 
 public interface ResultService {
-    Set<Integer> getResults();
+    VikingLottoResult getResults();
     Integer evaluatePrise(Set<Integer> results, Set<Integer> bets);
 }

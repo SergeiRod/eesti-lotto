@@ -1,5 +1,12 @@
 package com.bta.eestilotto.dao;
 
-public interface BaseRepository<E> {
+import com.bta.eestilotto.domain.BaseEntity;
+
+import java.util.List;
+
+public interface BaseRepository<E extends BaseEntity> {
     int saveOrUpdate(E entity);
+    int delete(E entity);
+    List<E> findAll();
+
 }
