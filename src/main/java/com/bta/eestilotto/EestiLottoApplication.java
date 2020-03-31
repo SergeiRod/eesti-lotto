@@ -15,14 +15,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class EestiLottoApplication implements CommandLineRunner {
 
-    @Autowired
+    /*@Autowired
     private UserAccountService userAccountService;
 
     @Autowired
     private UserAccountRepository userAccountRepository;
 
     @Autowired
-    private ResultService resultService;
+    private ResultService resultService;*/
+
 
     public static void main(String[] args) {
 
@@ -34,29 +35,19 @@ public class EestiLottoApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-
-        boolean loginChek1 = userAccountService.login("adggadj", "hhuhuhu");
-        System.out.println(loginChek1);
-        boolean serod = userAccountService.login("srvsilver@yahoo.com", "heLLo1!");
-        System.out.println(serod);
-
-        /*Set<Integer> bets = new HashSet<>(10);
-        bets.add(2);
-        bets.add(5);
-        bets.add(18);
-        bets.add(48);
-        bets.add(35);
-        bets.add(22);*/
-
-        LotteryTicket lotteryTicket= new LotteryTicket(null, 1L, 1L,
+        /*LotteryTicket lotteryTicket= new LotteryTicket(null, 1L, 1L,
                 16, 34, 44, 15, 20, 21);
         System.out.println(lotteryTicket.getResultId());
 
 
         VikingLottoResult results = resultService.getResults();
 
-
-        //Integer prise = resultService.evaluatePrise(results, bets);
+        UserAccount userAccount1 = new UserAccount(null, "Sergei", "Rodkin",
+                "rod11", "www111", 38210153234L, "srvsilver@yahoo.com");
+        //userAccountService.registration(userAccount1);
+        boolean login = userAccountService.login("rod11", "www111");
+        System.out.println(login ? "Login successful" : "Login failed");
+        //Integer prise = resultService.evaluatePrise(results, bets);*/
 
 
     }

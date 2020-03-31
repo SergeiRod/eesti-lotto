@@ -42,10 +42,10 @@ public class UserAccountRepository implements BaseRepository<UserAccount> {
 
         return namedParameterJdbcTemplate.query(sql, map, (resultSet, i) ->
         new UserAccount(resultSet.getLong("id"),
-                resultSet.getString("userName"),
-                resultSet.getString("userPassword"),
                 resultSet.getString("firstName"),
                 resultSet.getString("lastName"),
+                resultSet.getString("userName"),
+                resultSet.getString("userPassword"),
                 resultSet.getLong("isikuKood"),
                 resultSet.getString("email")
         ));
