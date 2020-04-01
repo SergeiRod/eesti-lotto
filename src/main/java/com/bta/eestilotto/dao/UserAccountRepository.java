@@ -53,7 +53,10 @@ public class UserAccountRepository implements BaseRepository<UserAccount> {
 
     @Override
     public int delete(UserAccount entity) {
-        return 0;
+        String sql = "delete from user_account where userName = :userName"; //placeholder
+        MapSqlParameterSource map = new MapSqlParameterSource();
+        map.addValue("userName", entity.getUserName());
+        return namedParameterJdbcTemplate.update(sql, map);
     }
 
     @Override

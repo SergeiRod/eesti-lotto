@@ -69,6 +69,12 @@ public class VikingLottoResultService implements ResultService {
         return prise;
     }
 
+    @Override
+    public List<VikingLottoResult> getAllResults() {
+        //TODO implement at home jdbctempalate findAll
+        return null;
+    }
+
     // result : 1,3,8,6
     //bets: 0,6,1,9
 

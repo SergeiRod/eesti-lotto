@@ -17,11 +17,12 @@ public class EestiLottoApplication implements CommandLineRunner {
 
     /*@Autowired
     private UserAccountService userAccountService;
-
-    @Autowired
+*/
+    /*@Autowired
     private UserAccountRepository userAccountRepository;
+    */
 
-    @Autowired
+    /*@Autowired
     private ResultService resultService;*/
 
 
@@ -49,7 +50,7 @@ public class EestiLottoApplication implements CommandLineRunner {
         System.out.println(login ? "Login successful" : "Login failed");
         //Integer prise = resultService.evaluatePrise(results, bets);*/
 
-
+        //userAccountRepository.delete();
     }
 
 }

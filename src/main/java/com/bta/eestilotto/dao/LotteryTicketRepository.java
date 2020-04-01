@@ -7,6 +7,10 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 
 @Repository
@@ -43,8 +47,12 @@ public class LotteryTicketRepository implements BaseRepository<LotteryTicket> {
 
     @Override
     public int delete(LotteryTicket entity) {
+        /*MapSqlParameterSource map = new MapSqlParameterSource();
+        map.getValues();
+        return namedParameterJdbcTemplate.update("delete from viking_lotto_ticket where id = :id", map);*/
         return 0;
     }
+
 
     @Override
     public List<LotteryTicket> findAll() {
